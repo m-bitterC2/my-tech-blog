@@ -1,5 +1,5 @@
 // PrismaClient の型定義をインポート
-import { PrismaClient } from "@/generated/prisma";
+import { PrismaClient } from "@prisma/client";
 
 // グローバルオブジェクトに prisma プロパティを追加
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient };

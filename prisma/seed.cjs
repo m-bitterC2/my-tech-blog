@@ -1,5 +1,5 @@
 // Prisma Client を読み込む（Prisma を使って DB にアクセスするためのライブラリ）
-const { PrismaClient } = require("../src/generated/prisma");
+const { PrismaClient } = require("@prisma/client");
 
 // パスワードをハッシュ化するためのライブラリ（bcryptjs）
 const bcrypt = require("bcryptjs");
