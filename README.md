@@ -5,7 +5,7 @@
 
 ## 本番環境
 
-[https://mytechblog.vercel.app](https://mytechblog.vercel.app)
+[https://my-tech-blog-nine.vercel.app](https://my-tech-blog-nine.vercel.app)
 
 ## 主な機能
 
@@ -36,5 +36,6 @@ npm run dev
 ## 今後の改善点
 
 - サイト全体のコンセプトづくり
+- ダークモード対応
 - レスポンシブ対応
 - カテゴリによる記事分類
