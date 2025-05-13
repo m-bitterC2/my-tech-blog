@@ -39,7 +39,14 @@ const page = async () => {
                 {post.published ? "表示" : "非表示"}
               </td>
               <td className="border p-2 text-center">
-                {new Date(post.updatedAt).toLocaleString()}
+                {new Date(post.updatedAt).toLocaleString("ja-JP", {
+                  year: "numeric",
+                  month: "2-digit",
+                  day: "2-digit",
+                  hour: "2-digit",
+                  minute: "2-digit",
+                  second: "2-digit",
+                })}
               </td>
               <td className="border p-2 text-center">
                 <PostDropdownMenu postId={post.id} />
