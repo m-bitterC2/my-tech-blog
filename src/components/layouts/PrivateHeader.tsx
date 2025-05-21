@@ -12,14 +12,14 @@ const PrivateHeader = async () => {
   if (!session?.user?.email) throw new Error("不正なリクエストです");
 
   return (
-    <header className="border-b bg-blue-200">
+    <header className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 shadow-sm">
       <div className="mx-auto px-4 py-4 flex items-center justify-between">
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
               <Link
                 href={"/dashboard"}
-                className="font-bold text-xl whitespace-pre"
+                className="font-bold text-xl whitespace-pre text-slate-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition"
               >
                 MyTechBlog - 管理ページ
               </Link>

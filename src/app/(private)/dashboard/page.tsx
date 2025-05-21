@@ -24,7 +24,7 @@ const page = async () => {
       </div>
       <table className="table-auto w-full border-collapse border">
         <thead>
-          <tr className="bg-gray-100">
+          <tr className="bg-gray-200 dark:bg-slate-800">
             <th className="border p-2 text-center">タイトル</th>
             <th className="border p-2 text-center">表示 / 非表示</th>
             <th className="border p-2 text-center">更新日時</th>

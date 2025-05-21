@@ -1,16 +1,13 @@
 "use client";
 import { useState, useActionState, useEffect } from "react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import rehypeHighlight from "rehype-highlight";
 import TextareaAutosize from "react-textarea-autosize";
-import "highlight.js/styles/github.css"; // コードハイライト用のスタイル
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { updatePost } from "@/lib/actions/updatePost";
 import Image from "next/image";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { MarkdownContent } from "@/components/MarkdownContent";
 
 type EditPostFormProps = {
   post: {
@@ -131,15 +128,8 @@ export default function EditPostForm({ post }: EditPostFormProps) {
           </Button>
         </div>
         {preview && (
-          <div className="border p-4 bg-gray-50 prose max-w-none">
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              rehypePlugins={[rehypeHighlight]}
-              skipHtml={false} // HTMLスキップを無効化
-              unwrapDisallowed={true} // Markdownの改行を解釈
-            >
-              {content}
-            </ReactMarkdown>
+          <div className="border p-4 prose max-w-none">
+            <MarkdownContent content={content} />
           </div>
         )}
 

@@ -5,10 +5,7 @@ import { format } from "date-fns";
 import { ja } from "date-fns/locale";
 import { auth } from "@/auth";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import rehypeHighlight from "rehype-highlight";
-import "highlight.js/styles/github.css"; // コードハイライト用のスタイル
+import { MarkdownContent } from "@/components/MarkdownContent";
 
 type Params = {
   params: Promise<{ id: string }>;
@@ -30,7 +27,7 @@ export default async function ShowPage({ params }: Params) {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <Card className="max-w-3xl mx-auto">
+      <Card className="max-w-3xl mx-auto pt-0">
         {post.topImage && (
           <div className="relative w-full h-64 lg:h-96">
             <Image
@@ -58,14 +55,7 @@ export default async function ShowPage({ params }: Params) {
         </CardHeader>
         <CardContent>
           <div className="prose max-w-none">
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              rehypePlugins={[rehypeHighlight]}
-              skipHtml={false} // HTMLスキップを無効化
-              unwrapDisallowed={true} // Markdownの改行を解釈
-            >
-              {post.content}
-            </ReactMarkdown>
+            <MarkdownContent content={post.content} />
           </div>
         </CardContent>
       </Card>
